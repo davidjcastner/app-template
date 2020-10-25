@@ -1,0 +1,14 @@
+{
+    "name": "app-template",
+    "version": "1.0.0",
+    "description": "toolkit for building apps",
+    "author": "David Castner",
+    "license": "Unlicense",
+    "repository": "github:davidjcastner/app-template",
+    "homepage": "https://github.com/davidjcastner/app-template",
+    "scripts": {},
+    "dependencies": {},
+    "devDependencies": {
+        "prettier": "^2.1.2"
+    }
+}
