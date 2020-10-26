@@ -6,3 +6,4 @@ _toolkit for building apps_
 
 - prettier https://prettier.io/
 - typescript https://www.typescriptlang.org/
+- eslint https://eslint.org/

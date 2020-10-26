@@ -1,0 +1,37 @@
+{
+    "$schema": "https://json.schemastore.org/eslintrc",
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "impliedStrict": true,
+            "jsx": true
+        }
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "env": {
+        "jest": true
+    },
+    "rules": {},
+    "overrides": [
+        {
+            "files": [
+                "**/*.test.js",
+                "**/*.test.jsx",
+                "**/*.test.ts",
+                "**/*.test.tsx",
+                "**/*.spec.js",
+                "**/*.spec.jsx",
+                "**/*.spec.ts",
+                "**/*.spec.tsx"
+            ],
+            "rules": {}
+        }
+    ]
+}
