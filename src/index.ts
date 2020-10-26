@@ -1,1 +1,5 @@
-export const myvar: number = 1;
+const example: HTMLElement = document.createElement('div');
+
+example.innerText = 'working';
+
+document.body.appendChild(example);
