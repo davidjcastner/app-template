@@ -18,7 +18,85 @@
     "env": {
         "jest": true
     },
-    "rules": {},
+    "rules": {
+        "@typescript-eslint/array-type": [
+            "error",
+            {
+                "default": "array"
+            }
+        ],
+        "@typescript-eslint/ban-ts-comment": [
+            "error",
+            {
+                "ts-expect-error": true,
+                "ts-ignore": true,
+                "ts-nocheck": true,
+                "ts-check": true
+            }
+        ],
+        "@typescript-eslint/consistent-indexed-object-style": [
+            "error",
+            "index-signature"
+        ],
+        "@typescript-eslint/consistent-type-assertions": [
+            "error",
+            {
+                "assertionStyle": "as",
+                "objectLiteralTypeAssertions": "never"
+            }
+        ],
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+        "@typescript-eslint/consistent-type-imports": [
+            "error",
+            {
+                "prefer": "type-imports",
+                "disallowTypeAnnotations": true
+            }
+        ],
+        "@typescript-eslint/explicit-function-return-type": [
+            "error",
+            {
+                "allowExpressions": false,
+                "allowTypedFunctionExpressions": true,
+                "allowHigherOrderFunctions": true,
+                "allowDirectConstAssertionInArrowFunctions": false,
+                "allowConciseArrowFunctionExpressionsStartingWithVoid": false
+            }
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": [
+            "error",
+            {
+                "allowArgumentsExplicitlyTypedAsAny": true,
+                "allowDirectConstAssertionInArrowFunctions": false,
+                "allowedNames": [],
+                "allowHigherOrderFunctions": true,
+                "allowTypedFunctionExpressions": true
+            }
+        ],
+        "@typescript-eslint/member-delimiter-style": [
+            "error",
+            {
+                "multiline": {
+                    "delimiter": "semi",
+                    "requireLast": true
+                },
+                "singleline": {
+                    "delimiter": "semi",
+                    "requireLast": false
+                }
+            }
+        ],
+        "@typescript-eslint/member-ordering": ["warning"],
+        "@typescript-eslint/method-signature-style": ["error", "property"],
+        "@typescript-eslint/array-type": ["error"],
+        "@typescript-eslint/array-type": ["error"],
+        "@typescript-eslint/array-type": ["error"],
+        "@typescript-eslint/array-type": ["error"],
+        "@typescript-eslint/array-type": ["error"],
+        "@typescript-eslint/array-type": ["error"],
+        "@typescript-eslint/array-type": ["error"],
+        "_": 0
+    },
     "overrides": [
         {
             "files": [
