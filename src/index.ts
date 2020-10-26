@@ -1,2 +1,1 @@
-const myvar = 1;
-
+export const myvar: number = 1;
