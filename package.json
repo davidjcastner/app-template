@@ -1,4 +1,5 @@
 {
+    "$schema": "https://json.schemastore.org/package",
     "name": "app-template",
     "version": "1.0.0",
     "description": "toolkit for building apps",
@@ -9,6 +10,8 @@
     "scripts": {},
     "dependencies": {},
     "devDependencies": {
-        "prettier": "^2.1.2"
+        "prettier": "^2.1.2",
+        "ts-node": "^9.0.0",
+        "typescript": "^4.0.3"
     }
 }
