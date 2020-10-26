@@ -6,7 +6,8 @@
         "ecmaFeatures": {
             "impliedStrict": true,
             "jsx": true
-        }
+        },
+        "project": "./tsconfig.json"
     },
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint"],
@@ -132,7 +133,6 @@
         ],
         "jsx-quotes": ["error", "prefer-single"],
         "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
-        "linebreak-style": ["error", "unix"],
         "lines-around-comment": [
             "error",
             {
@@ -181,7 +181,7 @@
         "no-whitespace-before-property": ["error"],
         "no-spaced-func": ["error"],
         "no-ternary": ["off"],
-        "o-trailing-spaces": ["error"],
+        "no-trailing-spaces": ["error"],
         "no-underscore-dangle": ["off"],
         "no-unneeded-ternary": ["error"],
         "object-curly-spacing": ["error", "always"],
@@ -288,46 +288,38 @@
         "@typescript-eslint/method-signature-style": ["error", "property"],
         "@typescript-eslint/naming-convention": [
             "error",
-            [
-                {
-                    "selector": "default",
-                    "format": ["strictCamelCase"],
-                    "leadingUnderscore": "forbid",
-                    "trailingUnderscore": "forbid"
-                },
-                {
-                    "selector": "variable",
-                    "types": ["boolean", "string", "number", "array"],
-                    "format": ["strictCamelCase", "UPPER_CASE"],
-                    "leadingUnderscore": "forbid",
-                    "trailingUnderscore": "forbid"
-                },
-                {
-                    "selector": [
-                        "class",
-                        "typeAlias",
-                        "interface",
-                        "typeAlias",
-                        "enum"
-                    ],
-                    "format": ["StrictPascalCase"],
-                    "leadingUnderscore": "forbid",
-                    "trailingUnderscore": "forbid"
-                },
-                {
-                    "selector": ["enumMember"],
-                    "format": ["UPPER_CASE"],
-                    "leadingUnderscore": "forbid",
-                    "trailingUnderscore": "forbid"
-                },
-                {
-                    "selector": ["memberLike"],
-                    "modifiers": ["private"],
-                    "format": ["strictCamelCase"],
-                    "leadingUnderscore": "require",
-                    "trailingUnderscore": "forbid"
-                }
-            ]
+            {
+                "selector": "default",
+                "format": ["strictCamelCase"],
+                "leadingUnderscore": "forbid",
+                "trailingUnderscore": "forbid"
+            },
+            {
+                "selector": "variable",
+                "types": ["boolean", "string", "number", "array"],
+                "format": ["strictCamelCase", "UPPER_CASE"],
+                "leadingUnderscore": "forbid",
+                "trailingUnderscore": "forbid"
+            },
+            {
+                "selector": ["class", "typeAlias", "interface", "enum"],
+                "format": ["StrictPascalCase"],
+                "leadingUnderscore": "forbid",
+                "trailingUnderscore": "forbid"
+            },
+            {
+                "selector": "enumMember",
+                "format": ["UPPER_CASE"],
+                "leadingUnderscore": "forbid",
+                "trailingUnderscore": "forbid"
+            },
+            {
+                "selector": "memberLike",
+                "modifiers": ["private"],
+                "format": ["strictCamelCase"],
+                "leadingUnderscore": "require",
+                "trailingUnderscore": "forbid"
+            }
         ],
         "@typescript-eslint/no-base-to-string": ["error"],
         "@typescript-eslint/no-confusing-non-null-assertion": ["error"],
@@ -340,7 +332,7 @@
         ],
         "@typescript-eslint/no-implied-eval": ["error"],
         "@typescript-eslint/no-inferrable-types": [
-            "error",
+            "off",
             {
                 "ignoreParameters": false,
                 "ignoreProperties": false
@@ -386,7 +378,6 @@
             "error",
             { "typesToIgnore": [] }
         ],
-        "@typescript-eslint/no-unnecessary-type-constraint": ["error"],
         "@typescript-eslint/no-unsafe-assignment": ["error"],
         "@typescript-eslint/no-unsafe-call": ["error"],
         "@typescript-eslint/no-unsafe-member-access": ["error"],
@@ -547,8 +538,7 @@
         "@typescript-eslint/semi": ["error"],
         "space-before-function-paren": "off",
         "@typescript-eslint/space-before-function-paren": ["error", "always"],
-        "space-infix-ops": "off",
-        "@typescript-eslint/space-infix-ops": ["error", { "int32Hint": false }]
+        "space-infix-ops": ["error", { "int32Hint": false }]
     },
     "overrides": [
         {
