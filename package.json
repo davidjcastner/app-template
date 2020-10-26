@@ -7,7 +7,9 @@
     "license": "Unlicense",
     "repository": "github:davidjcastner/app-template",
     "homepage": "https://github.com/davidjcastner/app-template",
-    "scripts": {},
+    "scripts": {
+        "lint:eslint": "./node_modules/.bin/eslint ."
+    },
     "dependencies": {},
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^4.5.0",
