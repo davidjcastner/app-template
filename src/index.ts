@@ -1,3 +1,4 @@
+import 'normalize.css';
 import './style.scss';
 
 const example: HTMLElement = document.createElement('div');
