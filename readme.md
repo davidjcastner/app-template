@@ -7,6 +7,7 @@ _toolkit for building apps_
 - prettier https://prettier.io/
 - typescript https://www.typescriptlang.org/
 - eslint https://eslint.org/
-- scss
-- normalize.css
-- stylelint
+- scss https://sass-lang.com/
+- normalize.css https://necolas.github.io/normalize.css/
+- stylelint https://stylelint.io/
+- jest https://jestjs.io/
