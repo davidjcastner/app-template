@@ -1,5 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import webpack from 'webpack';
 
@@ -28,6 +28,15 @@ const configuration: webpack.Configuration = {
             // typescript and tsx files
             test: /\.tsx?$/,
             use: 'ts-loader',
+        }, {
+            // scss and css files
+            test: /.s?css$/,
+            use: [
+                MiniCssExtractPlugin.loader,
+                'css-loader',
+                'postcss-loader',
+                'sass-loader',
+            ],
         }],
     },
     plugins: [
@@ -35,6 +44,10 @@ const configuration: webpack.Configuration = {
             title: 'App Template',
         }),
         new webpack.HotModuleReplacementPlugin(),
+
+        // current types doesn't work with webpack 5
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        new MiniCssExtractPlugin() as any,
     ],
 };
 

@@ -1,3 +1,5 @@
+import './style.scss';
+
 const example: HTMLElement = document.createElement('div');
 
 example.innerText = 'working';
