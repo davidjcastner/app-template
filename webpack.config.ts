@@ -37,15 +37,27 @@ const configuration: webpack.Configuration = {
                 'postcss-loader',
                 'sass-loader',
             ],
+        },
+        {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: [
+                'file-loader',
+            ],
+        },
+        {
+            test: /\.(woff|woff2|eot|ttf|otf)$/,
+            use: [
+                'file-loader',
+            ],
         }],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'App Template',
+            template: './src/index.html',
         }),
         new webpack.HotModuleReplacementPlugin(),
 
-        // current types doesn't work with webpack 5
+        // current MiniCssExtractPlugin types doesn't work with webpack 5
         /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
         new MiniCssExtractPlugin() as any,
     ],
