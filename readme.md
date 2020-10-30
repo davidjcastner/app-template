@@ -18,7 +18,8 @@ There are plenty of other very useful extensions, but here is a list of
 extension that specifically deal with formatting and linters used in this
 toolkit
 
--   Prettier
+-   Prettier - Code formatter
 -   Prettier Eslint
+-   Prettier JSON
 -   Eslint
 -   Stylelint
