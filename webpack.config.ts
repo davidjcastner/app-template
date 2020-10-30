@@ -3,8 +3,6 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import webpack from 'webpack';
 
-// const BUILD_DIR: string = 'dist';
-
 const configuration: webpack.Configuration = {
     devServer: {
         host: '0.0.0.0',
