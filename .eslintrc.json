@@ -65,13 +65,14 @@
         ],
         "generator-star-spacing": ["error"],
         "global-require": ["error"],
-        "guard-for-in": ["error"],
+        "guard-for-in": ["off"],
         "handle-callback-err": ["error"],
         "id-length": [
             "error",
             {
                 "max": 20,
-                "min": 3
+                "min": 3,
+                "exceptions": ["id"]
             }
         ],
         "indent": "off",
@@ -107,8 +108,8 @@
             }
         ],
         "max-nested-callbacks": ["error", 3],
-        "max-params": ["error", 3],
-        "max-statements": ["error", 12],
+        "max-params": ["error", 4],
+        "max-statements": ["error", 20],
         "new-cap": ["error"],
         "new-parens": ["error"],
         "newline-after-var": ["error", "always"],
@@ -204,10 +205,11 @@
             }
         ],
         "no-path-concat": ["error"],
-        "no-plusplus": ["error"],
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
         "no-process-env": ["error"],
         "no-process-exit": ["error"],
         "no-proto": ["error"],
+        "no-prototype-builtins": ["off"],
         "no-redeclare": "off",
         "no-regex-spaces": ["error"],
         "no-restricted-imports": ["error"],
@@ -259,7 +261,7 @@
         "padded-blocks": ["error", "never"],
         "prefer-arrow-callback": ["error"],
         "prefer-const": ["error"],
-        "prefer-reflect": ["error"],
+        "prefer-reflect": ["off"],
         "prefer-rest-params": ["error"],
         "prefer-spread": ["error"],
         "prefer-template": ["error"],
@@ -277,7 +279,7 @@
                 "before": false
             }
         ],
-        "sort-imports": ["error"],
+        "sort-imports": ["off"],
         "sort-vars": ["error"],
         "space-before-blocks": ["error"],
         "space-before-function-paren": "off",
@@ -298,7 +300,14 @@
         "spaced-comment": ["error", "always"],
         "template-curly-spacing": ["error", "never"],
         "use-isnan": ["error"],
-        "valid-jsdoc": ["warn"],
+        "valid-jsdoc": [
+            "warn",
+            {
+                "requireParamType": false,
+                "requireReturnType": false,
+                "requireReturn": false
+            }
+        ],
         "valid-typeof": ["error"],
         "vars-on-top": ["error"],
         "wrap-iife": ["error", "outside"],
@@ -321,12 +330,20 @@
         ],
         "@typescript-eslint/brace-style": [
             "error",
-            "stroustrup",
+            "1tbs",
             {
-                "allowSingleLine": true
+                "allowSingleLine": false
             }
         ],
-        "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+        "@typescript-eslint/comma-dangle": [
+            "error",
+            {
+                "objects": "always-multiline",
+                "arrays": "always-multiline",
+                "imports": "always-multiline",
+                "functions": "never"
+            }
+        ],
         "@typescript-eslint/comma-spacing": ["error"],
         "@typescript-eslint/consistent-indexed-object-style": [
             "error",
@@ -407,7 +424,13 @@
             {
                 "format": ["StrictPascalCase"],
                 "leadingUnderscore": "forbid",
-                "selector": ["class", "typeAlias", "interface", "enum"],
+                "selector": [
+                    "class",
+                    "typeAlias",
+                    "interface",
+                    "enum",
+                    "typeParameter"
+                ],
                 "trailingUnderscore": "forbid"
             },
             {
@@ -471,7 +494,7 @@
         "@typescript-eslint/no-shadow": ["error"],
         "@typescript-eslint/no-this-alias": ["error"],
         "@typescript-eslint/no-type-alias": [
-            "error",
+            "off",
             {
                 "allowAliases": "never",
                 "allowCallbacks": "never",
@@ -509,7 +532,7 @@
         "@typescript-eslint/no-unsafe-member-access": ["error"],
         "@typescript-eslint/no-unsafe-return": ["error"],
         "@typescript-eslint/no-unused-expressions": ["error"],
-        "@typescript-eslint/no-unused-vars": ["error"],
+        "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
         "@typescript-eslint/no-use-before-define": ["error"],
         "@typescript-eslint/no-useless-constructor": ["error"],
         "@typescript-eslint/no-var-requires": ["error"],
@@ -529,17 +552,21 @@
         "@typescript-eslint/prefer-optional-chain": ["error"],
         "@typescript-eslint/prefer-readonly": ["error"],
         "@typescript-eslint/prefer-readonly-parameter-types": [
-            "error",
+            "off",
             {
-                "checkParameterProperties": true,
-                "ignoreInferredTypes": false
+                "checkParameterProperties": false,
+                "ignoreInferredTypes": true
             }
         ],
         "@typescript-eslint/prefer-reduce-type-parameter": ["error"],
         "@typescript-eslint/prefer-regexp-exec": ["error"],
         "@typescript-eslint/prefer-string-starts-ends-with": ["error"],
         "@typescript-eslint/promise-function-async": ["error"],
-        "@typescript-eslint/quotes": ["error", "single"],
+        "@typescript-eslint/quotes": [
+            "error",
+            "single",
+            { "avoidEscape": true }
+        ],
         "@typescript-eslint/require-array-sort-compare": [
             "error",
             {
@@ -566,7 +593,7 @@
         "@typescript-eslint/semi": ["error"],
         "@typescript-eslint/space-before-function-paren": ["error", "always"],
         "@typescript-eslint/strict-boolean-expressions": [
-            "error",
+            "warn",
             {
                 "allowAny": false,
                 "allowNullableBoolean": false,
@@ -589,7 +616,7 @@
         ],
         "@typescript-eslint/type-annotation-spacing": ["error"],
         "@typescript-eslint/typedef": [
-            "error",
+            "off",
             {
                 "arrayDestructuring": true,
                 "arrowParameter": true,

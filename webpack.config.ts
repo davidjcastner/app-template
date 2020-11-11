@@ -22,26 +22,31 @@ const configuration: webpack.Configuration = {
         path: path.join(__dirname, 'dist'),
     },
     module: {
-        rules: [{
-            // typescript and tsx files
-            test: /\.tsx?$/,
-            use: 'ts-loader',
-        }, {
-            // scss and css files
-            test: /.s?css$/,
-            use: [
-                MiniCssExtractPlugin.loader,
-                'css-loader',
-                'postcss-loader',
-                'sass-loader',
-            ],
-        }, {
-            test: /\.(png|svg|jpg|gif)$/,
-            use: ['file-loader'],
-        }, {
-            test: /\.(woff|woff2|eot|ttf|otf)$/,
-            use: ['file-loader'],
-        }],
+        rules: [
+            {
+                // typescript and tsx files
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+            },
+            {
+                // scss and css files
+                test: /.s?css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
+                ],
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ['file-loader'],
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: ['file-loader'],
+            },
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -53,6 +58,7 @@ const configuration: webpack.Configuration = {
         /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
         new MiniCssExtractPlugin() as any,
     ],
+    resolve: { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
 };
 
 export default configuration;
